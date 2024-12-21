@@ -309,7 +309,9 @@ class _MemberPageState extends State<MemberPage>
                     children: [profilePanelAndDetailInfo(isHorizontal, false)]),
               );
             } else {
-              return const SizedBox();
+              SmartDialog.showNotify(
+                  msg: "获取个人信息失败", notifyType: NotifyType.error);
+              return profilePanelAndDetailInfo(isHorizontal, true);
             }
           } else {
             // 骨架屏
